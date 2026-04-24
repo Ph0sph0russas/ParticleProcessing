@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         public float GravitationY = 0;
 
 
-        public List<Point> gravityPoints = new List<Point>();
+        public List<IImpactPoint> impactPoints = new List<IImpactPoint>();
         public void UpdateState()
         {
             foreach (var particle in particles)
@@ -48,15 +48,9 @@ namespace WindowsFormsApp1
                 else
                 {
 
-                    foreach (var point in gravityPoints)
+                    foreach (var point in impactPoints)
                     {
-                        float gX = point.X - particle.X;
-                        float gY = point.Y - particle.Y;
-                        float r2 = gX * gX + gY * gY;
-                        float M = 100;
-
-                        particle.SpeedX += (gX) * M / r2;
-                        particle.SpeedY += (gY) * M / r2;
+                        point.ImpactParticle(particle);
                     }
 
                     // а это старый код, его не трогаем
@@ -96,16 +90,10 @@ namespace WindowsFormsApp1
             {
                 particle.Draw(g);
             }
-                
-            foreach (var point in gravityPoints)
+
+            foreach (var point in impactPoints) // тут теперь  impactPoints
             {
-                g.FillEllipse(
-                    new SolidBrush(Color.Red),
-                    point.X - 5,
-                    point.Y - 5,
-                    10,
-                    10
-                );
+                point.Render(g); // это добавили
             }
         }
     }
