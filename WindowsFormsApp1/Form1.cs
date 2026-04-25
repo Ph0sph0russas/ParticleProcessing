@@ -19,6 +19,9 @@ namespace WindowsFormsApp1
 
         GravityPoint point1; // добавил поле под первую точку
         GravityPoint point2; // добавил поле под вторую точку
+
+        PortalPoints portalPoints;
+
         public Form1()
         {
             InitializeComponent();
@@ -50,10 +53,18 @@ namespace WindowsFormsApp1
                 Y = picDisplay.Height / 2,
             };
 
+            portalPoints = new PortalPoints
+            {
+                X1 = picDisplay.Width / 2 - 50,
+                Y1=picDisplay.Height / 2,
+                X2=picDisplay.Width / 2 +50,
+                Y2=picDisplay.Height / 2
+            };
+
             // привязываем поля к эмиттеру
             emitter.impactPoints.Add(point1);
             emitter.impactPoints.Add(point2);
-
+            emitter.impactPoints.Add(portalPoints);
         }
 
         
@@ -109,6 +120,20 @@ namespace WindowsFormsApp1
                 newCounter.Y = e.Y;
                 emitter.impactPoints.Add(newCounter);
             }
+            else if (taskBox.Text=="Порталы")
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    portalPoints.X1 = e.X;
+                    portalPoints.Y1 = e.Y;
+                }
+                else if (e.Button == MouseButtons.Right)
+                {
+                    portalPoints.X2 = e.X;
+                    portalPoints.Y2 = e.Y;
+                }
+            }
+
         }
     }
 }
