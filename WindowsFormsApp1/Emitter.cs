@@ -114,16 +114,15 @@ namespace WindowsFormsApp1
 
         public void Render(Graphics g)
         {
-            // ну тут так и быть уж сам впишу...
-            // это то же самое что на форме в методе Render
+            
             foreach (var particle in particles)
             {
                 particle.Draw(g);
             }
 
-            foreach (var point in impactPoints) // тут теперь  impactPoints
+            foreach (var point in impactPoints) 
             {
-                point.Render(g); // это добавили
+                point.Render(g);
             }
         }
         

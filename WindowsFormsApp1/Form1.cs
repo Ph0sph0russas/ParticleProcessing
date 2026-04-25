@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
 
         PortalPoints portalPoints;
 
+        RadarPoint radarPoint;
         public Form1()
         {
             InitializeComponent();
@@ -61,9 +62,17 @@ namespace WindowsFormsApp1
                 Y2=picDisplay.Height / 2
             };
 
+            radarPoint = new RadarPoint
+            {
+                X = picDisplay.Width / 2,
+                Y = picDisplay.Height / 2,
+            };
+
             // привязываем поля к эмиттеру
             //emitter.impactPoints.Add(point1);
             //emitter.impactPoints.Add(point2);
+
+            emitter.impactPoints.Add(radarPoint);
             emitter.impactPoints.Add(portalPoints);
         }
 
@@ -90,6 +99,9 @@ namespace WindowsFormsApp1
                 emitter.MousePositionX = e.X;
                 emitter.MousePositionY = e.Y;
             }
+
+            radarPoint.X = e.X;
+            radarPoint.Y = e.Y;
 
             //point2.X = e.X;
             //point2.Y = e.Y;

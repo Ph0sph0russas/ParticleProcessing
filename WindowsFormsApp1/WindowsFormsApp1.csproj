@@ -61,6 +61,7 @@
     <Compile Include="PortalPoints.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RadarPoint.cs" />
     <Compile Include="TopEmitter.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
