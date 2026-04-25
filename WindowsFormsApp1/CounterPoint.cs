@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
 
             double r = Math.Sqrt(gX * gX + gY * gY);
             
-            if (r <= pointD/2 + particle.Radius)
+            if (r < pointD/2 + particle.Radius)
             {
                 particle.Life = 0;
                 counter++;

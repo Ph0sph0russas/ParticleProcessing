@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
 
 
         public float GravitationX = 0;
-        public float GravitationY = 0;
+        public float GravitationY = 1;
 
 
         public List<IImpactPoint> impactPoints = new List<IImpactPoint>();
