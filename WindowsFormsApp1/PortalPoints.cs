@@ -31,7 +31,8 @@ namespace WindowsFormsApp1
             {
                 particle.X = X2;
                 particle.Y= Y2;
-              
+                particle.SpeedX = -particle.SpeedX;
+                particle.SpeedY= -particle.SpeedY;
             }
         }
 

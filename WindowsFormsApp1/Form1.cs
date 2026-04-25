@@ -62,8 +62,8 @@ namespace WindowsFormsApp1
             };
 
             // привязываем поля к эмиттеру
-            emitter.impactPoints.Add(point1);
-            emitter.impactPoints.Add(point2);
+            //emitter.impactPoints.Add(point1);
+            //emitter.impactPoints.Add(point2);
             emitter.impactPoints.Add(portalPoints);
         }
 
