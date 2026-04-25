@@ -31,12 +31,12 @@ namespace WindowsFormsApp1
             this.emitter = new Emitter // создаю эмиттер и привязываю его к полю emitter
             {
                 Direction = 0,
-                Spreading = 10,
+                Spreading = 20,
                 SpeedMin = 10,
                 SpeedMax = 10,
                 ColorFrom = Color.Gold,
                 ColorTo = Color.FromArgb(0, Color.Red),
-                ParticlesPerTick = 10,
+                ParticlesPerTick = 20,
                 X = picDisplay.Width / 2,
                 Y = picDisplay.Height / 2,
             };
@@ -146,6 +146,18 @@ namespace WindowsFormsApp1
                 }
             }
 
+        }
+
+        private void picDisplay_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (e.Delta>0)
+            {
+                radarPoint.pointD += 5;
+            }
+            else if (e.Delta<0)
+            {
+                radarPoint.pointD -= 5;
+            }
         }
     }
 }

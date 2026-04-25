@@ -53,6 +53,7 @@ namespace WindowsFormsApp1
 
             foreach (var particle in particles)
             {
+                particle.inRadar = false;
                 if (particle.Life <= 0)
                 {
                     if (particlesToCreate > 0)

@@ -53,6 +53,7 @@
             this.picDisplay.TabStop = false;
             this.picDisplay.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picDisplay_MouseClick);
             this.picDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picDisplay_MouseMove);
+            this.picDisplay.MouseWheel += picDisplay_MouseWheel;
             // 
             // timer1
             // 
@@ -148,6 +149,7 @@
         private System.Windows.Forms.TrackBar tbGraviton1;
         private System.Windows.Forms.TrackBar tbGraviton2;
         private System.Windows.Forms.ComboBox taskBox;
+
     }
 }
 

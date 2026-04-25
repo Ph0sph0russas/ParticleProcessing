@@ -13,7 +13,6 @@ namespace WindowsFormsApp1
     {
         public int pointD = 100;
         private int counterInRadar = 0;
-        List<ParticleColorful> colorfulParticles= new List<ParticleColorful>();
         public override void ImpactParticle(Particle particle)
         {
             double gX = X - particle.X;
@@ -22,28 +21,10 @@ namespace WindowsFormsApp1
             double r = Math.Sqrt(gX * gX + gY * gY);
 
             
-
             if (particle.Radius + r < pointD / 2)
             {
-
-                ParticleColorful detectedParticle = new ParticleColorful();
-
-
-                detectedParticle.X=particle.X;
-                detectedParticle.Y=particle.Y;
-
-                detectedParticle.Radius = particle.Radius;
-
-                detectedParticle.SpeedX= particle.SpeedX;
-                detectedParticle.SpeedY= particle.SpeedY;
-
-                detectedParticle.Life= particle.Life;
-
-                detectedParticle.FromColor = Color.Lime;
-                detectedParticle.ToColor=Color.Lime;
-
-                colorfulParticles.Add(detectedParticle);
-                
+                counterInRadar++;
+                particle.inRadar = true;
             }
             
         }
@@ -64,8 +45,8 @@ namespace WindowsFormsApp1
             stringFormat.LineAlignment = StringAlignment.Center; // выравнивание по вертикали
 
             g.DrawString(
-                $"{colorfulParticles.Count()}",
-                new Font("Verdana", 10),
+                $"{counterInRadar}",
+                new Font("Verdana", 20),
                 new SolidBrush(Color.White),
                 X,
                 Y,
@@ -73,10 +54,7 @@ namespace WindowsFormsApp1
             );
 
 
-            foreach(var particle in colorfulParticles)
-            {
-                particle.Draw(g);
-            }
+            counterInRadar = 0;
             
 
         }
