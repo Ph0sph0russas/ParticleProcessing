@@ -14,12 +14,12 @@ namespace WindowsFormsApp1
         public override void ImpactParticle(Particle particle)
         {
 
-            float gX = X - particle.X;
-            float gY = Y - particle.Y;
+            double gX = X - particle.X;
+            double gY = Y - particle.Y;
 
             double r = Math.Sqrt(gX * gX + gY * gY);
             
-            if (r + particle.Radius < pointD/2+r)
+            if (r <= pointD/2 + particle.Radius)
             {
                 particle.Life = 0;
                 counter++;

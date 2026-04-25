@@ -102,10 +102,13 @@ namespace WindowsFormsApp1
 
         private void picDisplay_MouseClick(object sender, MouseEventArgs e)
         {
-            CounterPoint newCounter = new CounterPoint();
-            newCounter.X = e.X;
-            newCounter.Y = e.Y;
-            emitter.impactPoints.Add(newCounter);
+            if (taskBox.Text=="Счётчик")
+            {
+                CounterPoint newCounter = new CounterPoint();
+                newCounter.X = e.X;
+                newCounter.Y = e.Y;
+                emitter.impactPoints.Add(newCounter);
+            }
         }
     }
 }

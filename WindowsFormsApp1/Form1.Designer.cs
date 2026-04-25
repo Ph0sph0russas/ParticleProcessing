@@ -36,6 +36,7 @@
             this.lblDirection = new System.Windows.Forms.Label();
             this.tbGraviton1 = new System.Windows.Forms.TrackBar();
             this.tbGraviton2 = new System.Windows.Forms.TrackBar();
+            this.taskBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
@@ -101,11 +102,24 @@
             this.tbGraviton2.TabIndex = 5;
             this.tbGraviton2.Scroll += new System.EventHandler(this.tbGraviton2_Scroll);
             // 
+            // taskBox
+            // 
+            this.taskBox.FormattingEnabled = true;
+            this.taskBox.Items.AddRange(new object[] {
+            "Счётчик",
+            "Порталы"});
+            this.taskBox.Location = new System.Drawing.Point(551, 391);
+            this.taskBox.Name = "taskBox";
+            this.taskBox.Size = new System.Drawing.Size(153, 21);
+            this.taskBox.TabIndex = 6;
+            this.taskBox.Text = "Счётчик";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.taskBox);
             this.Controls.Add(this.tbGraviton2);
             this.Controls.Add(this.tbGraviton1);
             this.Controls.Add(this.lblDirection);
@@ -133,6 +147,7 @@
         private System.Windows.Forms.Label lblDirection;
         private System.Windows.Forms.TrackBar tbGraviton1;
         private System.Windows.Forms.TrackBar tbGraviton2;
+        private System.Windows.Forms.ComboBox taskBox;
     }
 }
 
