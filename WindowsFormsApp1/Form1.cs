@@ -80,8 +80,8 @@ namespace WindowsFormsApp1
                 emitter.MousePositionY = e.Y;
             }
 
-            point2.X = e.X;
-            point2.Y = e.Y;
+            //point2.X = e.X;
+            //point2.Y = e.Y;
         }
 
         private void tbDirection_Scroll(object sender, EventArgs e)
@@ -98,6 +98,14 @@ namespace WindowsFormsApp1
         private void tbGraviton2_Scroll(object sender, EventArgs e)
         {
             point2.Power = tbGraviton2.Value;
+        }
+
+        private void picDisplay_MouseClick(object sender, MouseEventArgs e)
+        {
+            CounterPoint newCounter = new CounterPoint();
+            newCounter.X = e.X;
+            newCounter.Y = e.Y;
+            emitter.impactPoints.Add(newCounter);
         }
     }
 }
