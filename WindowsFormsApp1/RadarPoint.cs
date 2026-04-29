@@ -26,6 +26,10 @@ namespace WindowsFormsApp1
                 counterInRadar++;
                 particle.inRadar = true;
             }
+            else
+            {
+                particle.inRadar = false;
+            }
             
         }
 
@@ -40,9 +44,9 @@ namespace WindowsFormsApp1
                 );
 
 
-            var stringFormat = new StringFormat(); // создаем экземпляр класса
-            stringFormat.Alignment = StringAlignment.Center; // выравнивание по горизонтали
-            stringFormat.LineAlignment = StringAlignment.Center; // выравнивание по вертикали
+            var stringFormat = new StringFormat(); 
+            stringFormat.Alignment = StringAlignment.Center;
+            stringFormat.LineAlignment = StringAlignment.Center; 
 
             g.DrawString(
                 $"{counterInRadar}",
@@ -50,7 +54,7 @@ namespace WindowsFormsApp1
                 new SolidBrush(Color.White),
                 X,
                 Y,
-                stringFormat // передаем инфу о выравнивании
+                stringFormat
             );
 
 

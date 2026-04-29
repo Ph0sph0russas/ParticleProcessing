@@ -22,13 +22,14 @@ namespace WindowsFormsApp1
             if (r < pointD/2 + particle.Radius)
             {
                 particle.Life = 0;
+                particle.inRadar = false;
                 counter++;
             }
         }
 
         public override void Render(Graphics g)
         {
-            // буду рисовать окружность с диаметром равным pointD
+           
             g.DrawEllipse(
                    new Pen(Color.Red),
                    X - pointD/2,
@@ -36,9 +37,10 @@ namespace WindowsFormsApp1
                    pointD,
                    pointD
                    );
-            var stringFormat = new StringFormat(); // создаем экземпляр класса
-            stringFormat.Alignment = StringAlignment.Center; // выравнивание по горизонтали
-            stringFormat.LineAlignment = StringAlignment.Center; // выравнивание по вертикали
+
+            var stringFormat = new StringFormat(); 
+            stringFormat.Alignment = StringAlignment.Center; 
+            stringFormat.LineAlignment = StringAlignment.Center; 
 
             g.DrawString(
                 $"{counter}",
@@ -46,7 +48,7 @@ namespace WindowsFormsApp1
                 new SolidBrush(Color.White),
                 X,
                 Y,
-                stringFormat // передаем инфу о выравнивании
+                stringFormat
             );
 
         }

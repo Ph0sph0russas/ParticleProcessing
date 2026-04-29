@@ -34,14 +34,13 @@
             this.tbDirection = new System.Windows.Forms.TrackBar();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.lblDirection = new System.Windows.Forms.Label();
-            this.tbGraviton1 = new System.Windows.Forms.TrackBar();
-            this.tbGraviton2 = new System.Windows.Forms.TrackBar();
             this.taskBox = new System.Windows.Forms.ComboBox();
+            this.tbPortalDirection = new System.Windows.Forms.TrackBar();
+            this.lbPortalDirection = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbGraviton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPortalDirection)).BeginInit();
             this.SuspendLayout();
             // 
             // picDisplay
@@ -53,7 +52,6 @@
             this.picDisplay.TabStop = false;
             this.picDisplay.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picDisplay_MouseClick);
             this.picDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picDisplay_MouseMove);
-            this.picDisplay.MouseWheel += picDisplay_MouseWheel;
             // 
             // timer1
             // 
@@ -85,24 +83,6 @@
             this.lblDirection.Size = new System.Drawing.Size(0, 13);
             this.lblDirection.TabIndex = 3;
             // 
-            // tbGraviton1
-            // 
-            this.tbGraviton1.Location = new System.Drawing.Point(274, 382);
-            this.tbGraviton1.Maximum = 100;
-            this.tbGraviton1.Name = "tbGraviton1";
-            this.tbGraviton1.Size = new System.Drawing.Size(114, 45);
-            this.tbGraviton1.TabIndex = 4;
-            this.tbGraviton1.Scroll += new System.EventHandler(this.tbGraviton_Scroll);
-            // 
-            // tbGraviton2
-            // 
-            this.tbGraviton2.Location = new System.Drawing.Point(408, 382);
-            this.tbGraviton2.Maximum = 100;
-            this.tbGraviton2.Name = "tbGraviton2";
-            this.tbGraviton2.Size = new System.Drawing.Size(104, 45);
-            this.tbGraviton2.TabIndex = 5;
-            this.tbGraviton2.Scroll += new System.EventHandler(this.tbGraviton2_Scroll);
-            // 
             // taskBox
             // 
             this.taskBox.FormattingEnabled = true;
@@ -115,14 +95,32 @@
             this.taskBox.TabIndex = 6;
             this.taskBox.Text = "Счётчик";
             // 
+            // tbPortalDirection
+            // 
+            this.tbPortalDirection.Location = new System.Drawing.Point(273, 382);
+            this.tbPortalDirection.Maximum = 359;
+            this.tbPortalDirection.Name = "tbPortalDirection";
+            this.tbPortalDirection.Size = new System.Drawing.Size(157, 45);
+            this.tbPortalDirection.TabIndex = 2;
+            this.tbPortalDirection.Scroll += new System.EventHandler(this.tbPortalDirection_Scroll);
+            // 
+            // lbPortalDirection
+            // 
+            this.lbPortalDirection.AutoSize = true;
+            this.lbPortalDirection.Location = new System.Drawing.Point(428, 390);
+            this.lbPortalDirection.Name = "lbPortalDirection";
+            this.lbPortalDirection.Size = new System.Drawing.Size(13, 13);
+            this.lbPortalDirection.TabIndex = 8;
+            this.lbPortalDirection.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbPortalDirection);
+            this.Controls.Add(this.tbPortalDirection);
             this.Controls.Add(this.taskBox);
-            this.Controls.Add(this.tbGraviton2);
-            this.Controls.Add(this.tbGraviton1);
             this.Controls.Add(this.lblDirection);
             this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.tbDirection);
@@ -132,8 +130,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbGraviton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPortalDirection)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,10 +143,9 @@
         private System.Windows.Forms.TrackBar tbDirection;
         private System.Windows.Forms.TrackBar trackBar2;
         private System.Windows.Forms.Label lblDirection;
-        private System.Windows.Forms.TrackBar tbGraviton1;
-        private System.Windows.Forms.TrackBar tbGraviton2;
         private System.Windows.Forms.ComboBox taskBox;
-
+        private System.Windows.Forms.TrackBar tbPortalDirection;
+        private System.Windows.Forms.Label lbPortalDirection;
     }
 }
 

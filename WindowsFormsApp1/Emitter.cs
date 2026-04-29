@@ -11,24 +11,23 @@ namespace WindowsFormsApp1
     {
         List<Particle> particles = new List<Particle>();
 
-        public int MousePositionX;
-        public int MousePositionY;
+        
 
-        public int X; // координата X центра эмиттера, будем ее использовать вместо MousePositionX
-        public int Y; // соответствующая координата Y 
-        public int Direction = 0; // вектор направления в градусах куда сыпет эмиттер
-        public int Spreading = 360; // разброс частиц относительно Direction
-        public int SpeedMin = 1; // начальная минимальная скорость движения частицы
-        public int SpeedMax = 10; // начальная максимальная скорость движения частицы
-        public int RadiusMin = 2; // минимальный радиус частицы
-        public int RadiusMax = 10; // максимальный радиус частицы
-        public int LifeMin = 20; // минимальное время жизни частицы
-        public int LifeMax = 100; // максимальное время жизни частицы
+        public int X;
+        public int Y;
+        public int Direction = 0;
+        public int Spreading = 360; 
+        public int SpeedMin = 1; 
+        public int SpeedMax = 10; 
+        public int RadiusMin = 2; 
+        public int RadiusMax = 10;
+        public int LifeMin = 20; 
+        public int LifeMax = 100; 
 
         public int ParticlesPerTick = 1;
 
-        public Color ColorFrom = Color.White; // начальный цвет частицы
-        public Color ColorTo = Color.FromArgb(0, Color.Black); // конечный цвет частиц
+        public Color ColorFrom = Color.White; 
+        public Color ColorTo = Color.FromArgb(0, Color.Black);
 
 
 
@@ -53,13 +52,13 @@ namespace WindowsFormsApp1
 
             foreach (var particle in particles)
             {
-                particle.inRadar = false;
+                
                 if (particle.Life <= 0)
                 {
                     if (particlesToCreate > 0)
                     {
-                        /* у нас как сброс частицы равносилен созданию частицы */
-                        particlesToCreate -= 1; // поэтому уменьшаем счётчик созданных частиц на 1
+                       
+                        particlesToCreate -= 1; 
                         ResetParticle(particle);
                     }
                 }
@@ -91,7 +90,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        public int ParticlesCount = 5;
 
         public virtual void ResetParticle(Particle particle)
         {
